@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+   <servlet>
+         <servlet-name>session-tracking</servlet-name>
+         <servlet-class>Sessionn</servlet-class>
+   </servlet>
+    
+   <servlet-mapping>
+       <servlet-name>session-tracking</servlet-name>
+       <url-pattern>/sessiontrack</url-pattern>
+  </servlet-mapping>
+
+</web-app>
