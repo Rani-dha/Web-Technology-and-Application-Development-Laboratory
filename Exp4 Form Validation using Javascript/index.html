@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel = "stylesheet" type = "text/css" href = "styles.css">
+      <script>
+        function validateForm() {
+           var name = document.myForm.name.value;
+           if (name == "") {
+             alert("Name should not be empty");
+             document.myForm.name.focus();
+             return false;
+           }           
+            var letters = /^[A-Za-z]+$/;         
+            var splittingNameValueAsCharacters = name.split(''); 
+            var count =0;
+            var alphabetCheck =0;
+            for (var i =0;i<splittingNameValueAsCharacters.length;i++)  {
+                                
+             if(splittingNameValueAsCharacters[i]==" ")
+              { 
+                count=count + 1 ;
+              }        
+             if( !((splittingNameValueAsCharacters[i].charCodeAt(0)>=65 && splittingNameValueAsCharacters[i].charCodeAt(0)<=90)|| (splittingNameValueAsCharacters[i].charCodeAt(0)>=97 && splittingNameValueAsCharacters[i].charCodeAt(0)<=122)) && splittingNameValueAsCharacters[i].charCodeAt(0)!=32){
+                alphabetCheck = alphabetCheck+1;   
+              }  
+            }            
+           if(count >2 || alphabetCheck >2){
+             alert("Name should contain as alphabets and two spaces only ");        
+             document.myForm.name.focus();
+             return false;
+         }
+         var email=document.myForm.email.value;
+         if (email == "") {
+             alert("Email Address should not be empty");
+             document.myForm.email.focus();
+             return false;
+           }          
+         var emailcheckReg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+         if(emailcheckReg.test(email)){
+           
+            return true;
+         } 
+         else{
+            alert("Please enter Valid email-id!!");
+            document.myForm.email.focus();
+            return false;
+          }                
+
+          var age = document.myForm.age.value;
+          if(age==""){
+            alert("The age should be auto-filled after entering date of birth");
+            document.myForm.age.focus();
+            return false;
+          }
+
+        return true;           
+      }
+      function exefunction(){ 
+            var dateofbirth = document.getElementById("date");
+            var dob = dateofbirth.value.split('/');  
+            var dd = dob[0];  
+            var mm = dob[1];  
+            var yy = dob[2]; 
+            var a = document.myForm.age.value;                
+           
+        if(dateofbirth ===''){
+            alert("Date of birth is required!!");
+        }
+        else{
+            
+               
+                if (dob.length != 3) {  
+                    alert("Please enter Date Of Birth in (dd/mm/yyyy) format");  
+                    
+                }  
+                  
+                    if ((mm == 4 || mm == 6 || mm == 9 || mm == 11) && dd > 30) {  
+                        alert("Please enter Day less than equal to 30");  
+                        return false;  
+                    }  
+                    if ((mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12) && dd > 31) {  
+                        alert("Please enter Day less than equal to 31");  
+                        return false;  
+                    }  
+                    if (mm == 2) {  
+                        var lyear = false;  
+                        if ((!(yy % 4) && yy % 100) || !(yy % 400)) {  
+                            lyear = true;  
+                        }  
+                        if ((lyear == false) && (dd >= 29)) {  
+                            alert('Invalid date format in February!');  
+                            return false;  
+                        }  
+                        if ((lyear == true) && (dd > 29)) {  
+                            alert('Invalid date format in February!');  
+                            return false;  
+                        }  
+                    }  
+                    if (parseFloat(dob[1]) > 12) {  
+                        alert("Please enter Month less than  or equal to 12");  
+                        return false;  
+                    }  
+                    if (dob[2].length != 4) {  
+                        alert("Please enter Year in Four Digit (yyyy)");  
+                        return false;  
+                    }  
+                    
+                   
+                } 
+                var a = 2020 - yy;
+               document.myForm.age.value = a;  
+             
+            }
+      </script>
+   </head>
+   <body>
+      <div class="header">
+         Form Validation 
+      </div>
+      <div class="content">
+      <form name="myForm"  onsubmit="return validateForm()" method="post">
+         <table>
+            <tr>
+               <td><label for = "name">Name :</label> </td>
+               <td><input type="text" name="name"  placeholder="Jack Sparrow"></td>
+            </tr>
+            <tr>
+               <td><label for = "mail">Email :</label></td>
+               <td><input type="text" name="email"  placeholder="xxxxx@xxxx.xxx"></td>
+            </tr>
+            <tr>
+               <td><label for = "dob"> Date Of Birth(DOB) :</label></td>
+               <td><input type = "text" id ="date" placeholder="dd/mm/yyyy" name = "dob" onblur="exefunction()"></td>
+            </tr>
+            <tr>
+               <td> <label for = "age"> Age:</label></td>
+               <td><input type = "text" id ="myage" placeholder="Autofilled from DOB" name = "age" disabled></td>
+            </tr>
+            <tr>             
+               <td style="text-align:right; color:red;"><input type="submit" value="Submit"></td>
+               <td style="color: green;"><input type = "reset" value = "Reset"></td>
+            </tr>         
+         </table>
+         
+      </form>
+   </div>
+   </body>
+</html>
