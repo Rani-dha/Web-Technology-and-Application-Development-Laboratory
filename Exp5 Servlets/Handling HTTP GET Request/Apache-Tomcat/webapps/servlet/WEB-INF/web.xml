@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+   <servlet>
+         <servlet-name>servletdemo</servlet-name>
+         <servlet-class>ColorGetServlet</servlet-class>
+   </servlet>
+    
+   <servlet-mapping>
+       <servlet-name>servletdemo</servlet-name>
+       <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+
+</web-app>
