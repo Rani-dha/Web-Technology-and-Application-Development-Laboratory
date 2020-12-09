@@ -6,3 +6,4 @@
 * [Form validation using Javascript](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp4%20Form%20Validation%20using%20Javascript)
 * Servlets
   * [ Gettting started with Servlets](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp5%20Servlets/Servlet%20demo)
+  * [Handling HTTP GET Request](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp5%20Servlets/Handling%20HTTP%20GET%20Request)
