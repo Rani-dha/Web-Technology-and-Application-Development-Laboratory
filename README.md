@@ -8,3 +8,4 @@
   * [ Gettting started with Servlets](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp5%20Servlets/Servlet%20demo)
   * [Handling HTTP GET Request](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp5%20Servlets/Handling%20HTTP%20GET%20Request)
 * [Session using servlet](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp6%20Session%20using%20servlet)  
+* [Database connectivity using Java Server Pages(JSP)](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp7%20Database%20connectivity%20using%20JSP/Apache%20Tomcat%209.0/webapps/registration)
