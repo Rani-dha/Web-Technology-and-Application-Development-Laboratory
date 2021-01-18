@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel = "stylesheet" type = "text/css" href = "styles.css">
+   </head>
+   <body>
+      <div class="header">
+         Register Form 
+      </div>
+      <div class="content">
+    <form name="myform" action="http://localhost:8080/registration/reg.jsp" method="post">  
+     
+         <table>
+            <tr>
+                <td>
+                    <label for = "name" >Name</label> 
+                </td>
+                <td>
+                    <input type="text" name="name" required/>
+                </td>
+               
+            </tr>
+            <tr>
+                <td><label>Register no</label></td>
+                <td><input type="text" name="rollNo" required/></td>
+            </tr>
+            <tr>
+                <td><label >Department</label></td>
+                <td><input type="text" name="department" required/></td>
+            </tr>
+            <tr>
+                <td><label >Mobile no</label></td>
+                <td><input type="text" name="mobileNo" required/></td>
+            </tr>
+            <tr>
+                <td><label class="fonts">Email-Id</label></td>
+                <td><input type="text" name="emailId" required/></td>
+            </tr>
+            
+            <tr>             
+               <td style="text-align: right;"><input type="submit" value="Submit"></td>
+               <td><a href="http://localhost:8080/registration/retrieval.html"><input type="button" value="Student info"></a></td>
+            </tr> 
+            
+         </table>
+         
+      </form>
+     
+   </div>
+   </body>
+</html>
