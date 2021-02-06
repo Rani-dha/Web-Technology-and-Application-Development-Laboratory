@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="20px"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="30px"
+        android:text="Launching 'app'"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#FF9800"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title_text_views"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20px"
+        android:fontFamily="sans-serif-medium"
+        android:padding="30px"
+        android:text="on Xiaomi Redmi Note5"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#FF9800"
+        android:textStyle="bold" />
+
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20px" />
+
+    <Button
+        android:id="@+id/button_start_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20px"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="startThread"
+        android:text="Start" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20px"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="stopThread"
+        android:text="Stop" />
+
+</LinearLayout>
