@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX FORM VALIDATION</title>
+  <style type="text/css">
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+     table {
+        color: whitesmoke;
+        background-color: #1b1b4b;
+        padding: 10px;
+        border-radius: 25px;
+        width:600px;
+        height:200px;
+      }
+     .button{
+      border: thin solid whitesmoke;
+      padding: 10px 16px;
+      margin-right: 20px;
+      border-radius: 18px;
+      box-shadow: 2px;
+    }
+
+  input{      
+      color: whitesmoke;
+      padding: 10px;
+      border-radius: 5px; 
+      border: thin solid whitesmoke;
+      width:200px;
+      height:5px;
+      background-color: #1b1b4b ;
+     }
+    input:hover{
+      border: 2px solid whitesmoke;
+     }
+    td{
+      padding:1px 8px ;
+     }
+     td > label {
+       text-align:left;
+     }
+
+     h2 {
+       color: #1b1b4b;
+       text-align: center;
+     }
+
+     p {
+       color: red;
+     }
+       
+  </style>
+</head>
+<body align="center">   
+      
+      <form  action="ajax" method="POST" onsubmit="return validator(this);">
+        
+        <b><h2>FORM VALIDATION USING AJAX</h2></b>
+          
+        <table align="center">
+        
+          <tr>
+            <td >
+              <label for="name"><h4>Name : </h4></label>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Your Name" name="username" id="name" onchange="check(this.name,this.value);">
+              <p id="usernamemsg"></p>
+           </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="age"><h4>Age : </h4></label>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Your Age" name="dob" id="age" onchange="check(this.name,this.value);">
+          <p id="dobmsg"></p>
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="mail"><h4>Email : </h4></label>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Your Mailid" name="emailId" id="mail" onchange="check(this.name,this.value);">
+            <p id="emailIdmsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td >
+              <label for="pwd1"><h4>Password :</h4></label>
+            </td>
+            <td>
+              <input type="password" placeholder="Enter Your Password" name="pwd1" id="pwd1" onchange="check(this.name,this.value);">
+          <p id="pwd1msg"></p>
+            </td>
+          </tr>
+          <tr>
+            
+            <td>
+              <label for="pwd2"><h4>Confirm Password : </h4></label>
+            </td>
+          
+            <td>
+              <input type="password" placeholder="Retype Your Password" name="pwd2" id="pwd2" onchange="passwordcheck(this.value);">
+              <p id="pwd2msg"></p>
+            </td>
+
+          </tr>
+          <tr>
+            <td >
+            </td>
+            <td align="left">
+               <button id="btn1" type="submit" name="button1" class="button" ><div>SUBMIT</div></button>  
+              <button id="btn2" type="reset" name="button2" class="button" ><div>RESET</div></button>
+            </td>
+            <td></td>
+          </tr>
+        
+        <br>
+        </table>
+      </form>
+      
+   </div>
+  <script type="text/javascript">
+
+  function check(field,data){
+      if(data!=null&&data!=""){
+       
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function(){
+      if(this.readyState == 4  && this.status == 200){
+            if(this.responseText!=null && this.responseText!="")
+            {
+              document.getElementById(field+"msg").style.display = "block";
+              document.getElementById(field+"msg").innerHTML = this.responseText;
+              document.getElementById("btn1").disabled = true;
+            }
+           if(this.responseText == "valid"){
+              document.getElementById(field+"msg").style.display = "none";
+              document.getElementById("btn1").disabled = false;
+           }
+
+        }
+      };
+      xhttp.open("GET","ajax?field="+field+"&data="+data,true);
+      xhttp.send();
+    }
+  }
+
+  function passwordcheck(pwd2){
+    var pwd1 = document.getElementById("pwd1").value;
+    if(pwd1 !== pwd2){
+      document.getElementById("pwd2msg").style.display = "block";
+      document.getElementById("pwd2msg").innerHTML ="Your Password doesn't match!";
+      document.getElementById("btn1").disabled = true;
+    }
+    else{
+          document.getElementById("pwd2msg").style.display = "none";
+          document.getElementById("btn1").disabled = false;
+        }
+  }
+
+  function validator(form){
+    var inputs = form.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+            if(inputs[i].value == ""){
+                alert("All Fields are Mandatory. Kindly fill!");
+                return false;
+            }
+          }
+          return true;
+  }
+ 
+  </script>
+</body>
+</html>
