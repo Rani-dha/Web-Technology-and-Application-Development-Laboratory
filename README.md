@@ -9,7 +9,7 @@
    2. [Handling HTTP GET Request](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp5%20Servlets/Handling%20HTTP%20GET%20Request)
 6. [Session using servlet](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp6%20Session%20using%20servlet)  
 7. [Database connectivity using Java Server Pages(JSP)](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp7%20Database%20connectivity%20using%20JSP/Apache%20Tomcat%209.0/webapps/registration)
-8. [XML Parsing in Server side](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp8%20XML%20Parsing%20in%20server%20side/webapps)
+8. [XML Parsing in Server side](https://github.com/Rani-dha/Web-Technology-and-Application-Development-Laboratory/tree/main/Exp8%20XML%20Parsing%20in%20server%20side)
 9. [AJAX Validation]()
 10. [Multithreading ]()
 11. [Firebase]()
