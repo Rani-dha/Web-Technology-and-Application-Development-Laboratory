@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<class>
+  <college counselling_code = "2005">
+  <collegeName>Government College of Technology</collegeName>
+  <nickname>GCT</nickname>
+  <clgDistrict>Coimbatore</clgDistrict>
+  </college>
+
+  <college counselling_code = "1001">
+  <collegeName>College of Engineering, Guindy</collegeName>
+  <nickname>CEG</nickname>
+  <clgDistrict>Chennai</clgDistrict>
+  </college>
+
+   <college counselling_code = "1004">
+  <collegeName>Madras Institute of Technology</collegeName>
+  <nickname>MIT</nickname>
+  <clgDistrict>Chennai</clgDistrict>
+  </college>
+
+</class>  
